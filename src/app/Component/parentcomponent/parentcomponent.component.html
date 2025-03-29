@@ -1,0 +1,21 @@
+<h2 class="main-heading">Parent Component</h2>
+<div class="card">
+    <div class="card-header">
+        <img [src]="product.img" alt="image">
+    </div>
+    <div class="card-body">
+        <h3>{{ product.name }}</h3>
+        <p> ${{ product.price }}</p>
+    </div>
+</div>
+
+
+<app-childcomponent 
+  [productData]="product" 
+  (childEvent)="handleChildMessage($event)">
+</app-childcomponent>
+<p class="message">
+    <strong>emit data from child to parent.</strong>
+    {{ messageFromChild }}
+</p>
+
